@@ -1,0 +1,47 @@
+/*
+    FILE: style.css
+    DATE: 2022-06-21    ISO-8601
+    AUTHOR: 
+    DESCRIPTION: General Styling
+
+*/
+body{
+    color: #add8e6;
+    background-color: #01418b;
+    height: 100%;
+}
+
+h1{
+    font-family: Helvetica;
+    font-size: xx-large;
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-bottom: 20px;
+}
+
+button{
+    margin-left: 40%;
+    margin-top: 20px;
+}
+
+p{
+    font-size: medium;
+    margin-left: 30%;
+}
+
+.first-answer-correct{
+    background-color: rgb(150, 47, 6);
+    color: rgb(255, 208, 0);
+}
+
+footer{
+    position: fixed;
+    height: 45px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: burlywood;
+    color: black;
+    font-size: larger;
+    padding-top: 25px;
+}
