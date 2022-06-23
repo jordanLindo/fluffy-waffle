@@ -90,6 +90,7 @@ function askFirstSet(){
             output = "You are correct. ";
             score++;
             if(i === 0){
+                //UPDATE NEEDED new function
                 let element = document.getElementById("theBody");
                 element.classList.add("first-answer-correct");
             }
@@ -149,13 +150,13 @@ function multipleAnswersQuestion(){
         let done = false;
         for(let i = 0; i < possibleAnswers.length; i++){
             if(snackGuess == possibleAnswers[i]){
-                alert("That is one of my snacks!");
-                score++;
                 done = true;
                 break;
             }
         }
         if(done){
+            alert("That is one of my snacks!");
+            score++;
             break;
         } else {
             alert("That isn't one of my snacks.");
