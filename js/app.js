@@ -18,11 +18,14 @@ function initialize(){
 
 /**
  * Prompts the user for a name
- * @returns string name
+ * @returns {string} name
  */
 function getName(){
-    let name = prompt("Please enter your name.");
-    alert('Welcome '+ name + '!');
+    let name = "";
+    name = prompt("Please enter your name.");
+    if(name != undefined && name.l){
+        alert('Welcome '+ name + '!');
+    }
     let element = document.getElementById("footer");
     element.innerHTML = "Welcome "+name;
     return name;
@@ -33,8 +36,24 @@ function getName(){
  */
 function askQuestions(){
     let score = 0;
-    let promptMessage = "Yes or No";
-    let possibleAnswers = ["popcorn","reese's"];
+    score += askFirstSet(score);
+    score += numberGuessingQuestion(score);
+    score += multipleAnswersQuestion(score);
+    
+    alert("Your final score was " + score + ".");
+    alert('That was fun ' + globalName + ". Let's play again sometime.");
+
+}
+
+/**
+ * Ask a set of hard coded [question, answer, specialized response]
+ * with a prompt to the user increment score for correct responses
+ * alert the user to the status of their answer with specialized response
+ * 
+ * @returns {number} score updated
+ */
+function askFirstSet(){
+    let score = 0;
     let questions = [
         [
             "Do you think my favorite color is blue?",
@@ -62,6 +81,8 @@ function askQuestions(){
             "I do not have any pets."
         ]
     ];
+
+    let promptMessage = getPrompt();
     for(let i = 0; i < questions.length; i++){
         let answer = prompt(questions[i][0]+" "+promptMessage).toLowerCase();
         let output = "You are incorrect. ";
@@ -76,8 +97,20 @@ function askQuestions(){
         alert(output+questions[i][2]);
         //console.log(output+questions[i][2]);
     }
-    
+
+    return score;
+}
+
+/**
+ * Generates a random number between one and ten inclusive
+ * and asks the user to guess a number in that range
+ * 
+ * @returns {number} score updated
+ */
+function numberGuessingQuestion(){
+
     //console.log("Guess a number");
+    let score = 0;
     let selectedNum = Math.floor((Math.random()*10)+1);
     let guesses = 4;
     while(guesses > 0){
@@ -99,9 +132,18 @@ function askQuestions(){
             alert("The correct answer is "+selectedNum);
         }
     }
+    return score;
+}
 
+/**
+ * 
+ * @returns {number} the score updated
+ */
+function multipleAnswersQuestion(){
     //console.log("Guess a snack");
-    guesses = 6;
+    let score = 0;
+    let possibleAnswers = ["popcorn","reese's"];
+    let guesses = 6;
     while(guesses > 0){
         let snackGuess = prompt("Guess my theater snacks.").toLowerCase();
         let done = false;
@@ -116,7 +158,7 @@ function askQuestions(){
         if(done){
             break;
         } else {
-            alert("That isn't one of my snacks.")
+            alert("That isn't one of my snacks.");
         }
         guesses--;
         if(guesses === 0){
@@ -130,13 +172,27 @@ function askQuestions(){
             alert(resultString);
         }
     }
-
-
-    alert("Your final score was " + score + ".");
-    alert('That was fun ' + globalName + ". Let's play again sometime.");
-
+    return score;
 }
 
+/**
+ * get the standard message prompt
+ *
+ * @returns {string} standard message prompt
+ */
+function getPrompt(){
+    let promptMessage = "Yes or No";
+
+    return promptMessage;
+}
+
+/**
+ * Compares user input to set value, some variation allowed y or yes, n or no
+ * 
+ * @param {string} correctAnswer a hard coded answer
+ * @param {string} userResponse the answer provided by the user
+ * @returns {boolean} result of the comparison
+ */
 function checkAnswer(correctAnswer, userResponse){
     let result = false;
     if(correctAnswer === "yes"){
@@ -148,6 +204,6 @@ function checkAnswer(correctAnswer, userResponse){
             result = true;
         }
     }
-    return result
+    return result;
 
 }
