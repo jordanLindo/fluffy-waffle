@@ -48,17 +48,23 @@ ol li{
     list-style-type: decimal;
 }
 
-#secondSection{
-    width: 45%;
-    border: black 3px;
-    border-style: solid;
-    margin-left: 30%;
-}
 
 .first-answer-correct{
     background-color: rgb(150, 47, 6);
     color: rgb(255, 208, 0);
 }
+
+#secondSection{
+    width: 45%;
+    border: black 3px;
+    border-style: solid;
+    margin-left: 30%;
+    background-color: darksalmon;
+    color:darkred;
+}
+
+
+
 
 footer{
     position: fixed;

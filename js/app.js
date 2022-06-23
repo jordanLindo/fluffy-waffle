@@ -91,8 +91,8 @@ function askFirstSet(){
             score++;
             if(i === 0){
                 //UPDATE NEEDED new function
-                let element = document.getElementById("theBody");
-                element.classList.add("first-answer-correct");
+                changeBody();
+
             }
         }
         alert(output+questions[i][2]);
@@ -101,6 +101,16 @@ function askFirstSet(){
 
     return score;
 }
+
+function changeBody(){
+    let element = document.getElementById("theBody");
+    element.classList.add("first-answer-correct");
+
+}
+
+
+
+
 
 /**
  * Generates a random number between one and ten inclusive
