@@ -62,8 +62,30 @@ ol :nth-child(odd){
 }
 
 .first-answer-correct{
-    background-color: rgb(150, 47, 6);
-    color: rgb(255, 208, 0);
+    background-color: #B34800;
+    color: white;
+}
+
+.first-answer-correct #secondSection{
+    border: #7d005e 3px;
+    border-style: solid;
+    background-color: #b30000;
+    color:#B34800;
+}
+
+.first-answer-correct #secondSection > h2{
+    background-color: #B34800;
+    color: white;
+}
+
+.first-answer-correct ol{
+    background-color: #B34800;
+    color: white;
+
+}
+
+.first-answer-correct ol :nth-child(odd){
+    background-color: #7D0000;
 }
 
 #secondSection{

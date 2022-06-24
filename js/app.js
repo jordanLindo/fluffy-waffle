@@ -164,14 +164,14 @@ function multipleAnswersQuestion(){
                 break;
             }
         }
+        guesses--;
         if(done){
             alert("That is one of my snacks!");
             score++;
             break;
         } else {
-            alert("That isn't one of my snacks.");
+            alert("That isn't one of my snacks. "+guesses+" tries left.");
         }
-        guesses--;
         if(guesses === 0){
             let resultString = "";
             for(let i = 0; i < possibleAnswers.length; i++){
