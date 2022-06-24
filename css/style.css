@@ -6,9 +6,10 @@
 
 */
 body{
-    color: #add8e6;
-    background-color: #01418b;
+    background-color: #00FFFF;
+    color: #0000FF;
     height: 100%;
+    text-align: center;
 }
 
 h1{
@@ -16,7 +17,6 @@ h1{
     font-weight: bold;
     font-size: xx-large;
     margin-top: 5%;
-    margin-left: 35%;
     margin-bottom: 20px;
 }
 h2{
@@ -25,29 +25,41 @@ h2{
     font-size: x-large;
     margin-top: 5%;
     margin-bottom: 2%;
-    margin-left: 30%;
 
 }
 
 button{
-    margin-left: 45%;
     margin-top: 20px;
+    margin-bottom: 20%;
 }
 
-ul{
-    margin-left: 15%;
-}
-
-ul, ol{
+ol{
     font-size: medium;
     padding: 0 15%;
     margin-bottom: 5%;
 }
 
-ol li{
-    list-style-type: decimal;
+ul{
+    padding-bottom: 3%;
 }
 
+ol{
+    margin: 0 20% 5% 20%;
+    padding-bottom: 5%;
+    background-color: #002db3;
+}
+
+ol li{
+    list-style-type: decimal;
+    font-weight: bold;
+    line-height: 40px;
+    align-items: center;
+}
+
+ol :nth-child(odd){
+    background-color: #00B3B3;
+    color: white;
+}
 
 .first-answer-correct{
     background-color: rgb(150, 47, 6);
@@ -55,16 +67,33 @@ ol li{
 }
 
 #secondSection{
-    width: 45%;
-    border: black 3px;
+    border: #002DB3 3px;
     border-style: solid;
-    margin-left: 30%;
-    background-color: darksalmon;
-    color:darkred;
+    background-color: #5500FF;
+    color:#00FFFF;
+    text-align: center;
 }
 
+#secondSection > h2{
+    background-color: #002db3;
+    width: 60%;
+    margin: 5% 20% 0 20%;
+    padding: 5% 0;
+    
+}
 
+div{
+    width: 20%;
+    float: left;
+    margin: 10px;
+    height: 90%;
+}
 
+button{
+    margin: auto;
+    position: fixed;
+    bottom: 80px;
+}
 
 footer{
     position: fixed;
@@ -76,4 +105,9 @@ footer{
     color: black;
     font-size: larger;
     padding-top: 25px;
+    text-align: left;
+}
+
+#center{
+    width: 60%;
 }
