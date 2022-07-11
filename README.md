@@ -1,4 +1,4 @@
 # getToKnowMe
 
-A project to practice using an adjusted gitignore and linked files
-Add in a Top 10 Ghibli Movies list, altered the experience section and added questions to the game.
+A get simple game to get aquainted.
+A Top 10 Ghibli Movies list, altered the experience section and added questions to the game.
